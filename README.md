@@ -35,45 +35,9 @@ This project combines a minimal Linux firewall setup with a real-time packet ins
 
 ## Installation & Usage
 
-1. Clone the repository or create a new Rust project:
+1. Clone the repository or create a new Rust project.
 
-```bash
-cargo new packet_inspector
-cd packet_inspector
-Add the dependency to your Cargo.toml:
 
-toml
-Copy
-Edit
-[dependencies]
-pnet = "0.30.0"
-Replace src/main.rs with the packet inspector Rust code.
-
-Create a Bash script (e.g., scripts/firewall.sh) for firewall configuration:
-
-bash
-Copy
-Edit
-#!/bin/bash
-set -e
-
-sudo iptables -F
-sudo iptables -X
-
-sudo iptables -A INPUT -p tcp --dport 8080 -j DROP
-sudo iptables -A INPUT -i lo -j ACCEPT
-sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
-
-sudo iptables -L -v
-
-cargo run --release
-Make the Bash script executable:
-
-bash
-Copy
-Edit
-chmod +x scripts/firewall.sh
-Run the firewall setup and packet inspector:
 
 bash
 Copy
