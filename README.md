@@ -79,19 +79,3 @@ bash
 Copy
 Edit
 sudo ./scripts/firewall.sh
-Notes
-Running the packet sniffer requires elevated privileges or the binary to have CAP_NET_RAW capability.
-
-You can modify the port and firewall rules in the Bash script as needed.
-
-This is a minimal proof-of-concept to build upon for advanced firewall and packet inspection capabilities.
-
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-
-Acknowledgements
-libpnet - Rust networking library for packet capture and parsing.
-
-Contact
-For questions or contributions, please open an issue or submit a pull request.
-
